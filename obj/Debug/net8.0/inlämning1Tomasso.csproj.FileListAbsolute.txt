@@ -1,0 +1,7 @@
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.csproj.AssemblyReference.cache
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.AssemblyInfoInputs.cache
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.AssemblyInfo.cs
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.csproj.CoreCompileInputs.cache
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.MvcApplicationPartsAssemblyInfo.cs
