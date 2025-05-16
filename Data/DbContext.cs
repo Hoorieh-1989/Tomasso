@@ -1,12 +1,12 @@
-﻿using Inlämning1Tomaso.Data.Models;
+﻿
 using inlämning1Tomasso.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace inlämning1Tomasso.Data
 {
-    public class TomasoDbContext : DbContext
+    public class TomassoDbContext : DbContext
     {
-        public TomasoDbContext(DbContextOptions options) : base(options)
+        public TomassoDbContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -15,6 +15,9 @@ namespace inlämning1Tomasso.Data
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
-        public DbSet<DishIngredient> DishIngredients { get; set; }
+        public DbSet<DishOrder>DishOrder{ get; set; }
+
+        public DbSet<Category> Category { get; set; }
+
     }
 }

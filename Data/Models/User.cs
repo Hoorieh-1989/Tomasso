@@ -5,7 +5,7 @@ namespace inlämning1Tomasso.Data.Models
     public class User
     {
         [Key]
-        public int USerID { get; set; }
+        public int UserID { get; set; }
 
         [Required]
 

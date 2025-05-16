@@ -1,14 +1,17 @@
 ﻿using inlämning1Tomasso.Data.Interface.Repositories;
 using inlämning1Tomasso.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace inlämning1Tomasso.Data.Repos
 {
-    public class Dishrepo : IDishRepository
+    public class DishRepository : IDishRepository
     {
-        private readonly TomasoDbContext _context;
+        private readonly TomassoDbContext _context;
 
-        public Dishrepo(TomasoDbContext context)
+        public DishRepository(TomassoDbContext context)
         {
             _context = context;
         }
@@ -44,27 +47,9 @@ namespace inlämning1Tomasso.Data.Repos
             return _context.Dishes.ToList();
         }
 
-        public List<Ingredient> GetIngredientsByDishId(int dishId)
+        public Dish GetDishById(int dishID)
         {
-            return _context.DishIngredients
-                .Where(di => di.DishID == dishId)
-                .Include(di => di.Ingredient)
-                .Select(di => di.Ingredient)
-                .ToList();
-        }
-
-        public List<Dish> GetDishesByIngredientId(int ingredientId)
-        {
-            return _context.DishIngredients
-                .Where(di => di.IngredientID == ingredientId)
-                .Include(di => di.Dish)
-                .Select(di => di.Dish)
-                .ToList();
-        }
-
-        public List<Dish> GetAllDishes(int dishID)
-        {
-            throw new NotImplementedException();
+            return _context.Dishes.FirstOrDefault(d => d.DishID == dishID);
         }
     }
 }

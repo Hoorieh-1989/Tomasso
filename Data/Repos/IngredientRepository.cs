@@ -4,15 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace inlämning1Tomasso.Data.Repos
 {
-    public class IngredientRepo : IIngredientRepository
+    public class IngredientRepository : IIngredientRepository
     {
-        private readonly TomasoDbContext _context;
+        private readonly TomassoDbContext _context;
 
-        public IngredientRepo(TomasoDbContext context)
+        public IngredientRepository(TomassoDbContext context)
         {
             _context = context;
         }
-
         public void AddIngredient(Ingredient ingredient)
         {
             _context.Ingredients.Add(ingredient);

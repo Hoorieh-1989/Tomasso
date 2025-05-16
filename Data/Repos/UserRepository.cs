@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace inlämning1Tomasso.Data.Repos
 {
-    public class UserRepo : IUserRepository
+    public class UserRepository : IUserRepository
     {
-        private readonly TomasoDbContext _context;
+        private readonly TomassoDbContext _context;
 
-        public UserRepo(TomasoDbContext context)
+        public UserRepository(TomassoDbContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace inlämning1Tomasso.Data.Repos
 
         public void DeleteUser(int userID)
         {
-            var user = _context.Users.SingleOrDefault(u => u.USerID == userID);
+            var user = _context.Users.SingleOrDefault(u => u.UserID == userID);
             if (user != null)
             {
                 _context.Users.Remove(user);
@@ -38,7 +38,7 @@ namespace inlämning1Tomasso.Data.Repos
 
         public void UpdateUser(User user)
         {
-            var existing = _context.Users.SingleOrDefault(u => u.USerID == user.USerID);
+            var existing = _context.Users.SingleOrDefault(u => u.UserID == user.UserID);
             if (existing != null)
             {
                 _context.Entry(existing).CurrentValues.SetValues(user);

@@ -1,6 +1,8 @@
 ﻿namespace inlämning1Tomasso.Data.DTOs
 {
-    public class IngridientDto
+    public class IngredientDto
     {
+        public int IngredientID { get; set; }
+        public string Name { get; set; }
     }
 }

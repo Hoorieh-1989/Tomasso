@@ -5,3 +5,4 @@ C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\
 C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.csproj.CoreCompileInputs.cache
 C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hoori\source\repos\Molndatabaser\inlämning1Tomasso\inlämning1Tomasso\obj\Debug\net8.0\inlämning1Tomasso.sourcelink.json
