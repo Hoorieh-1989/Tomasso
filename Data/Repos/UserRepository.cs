@@ -1,10 +1,10 @@
-﻿using inlämning1Tomasso.Data.Interface.Repositories;
-using inlämning1Tomasso.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
+﻿
+using Inlämning1Tomasso.Data.Models;
 
-namespace inlämning1Tomasso.Data.Repos
+using inlämning1Tomasso.Data.Interface.Repositories;
+
+
+namespace Inlämning1Tomasso.Data.Repository
 {
     public class UserRepository : IUserRepository
     {
@@ -23,7 +23,7 @@ namespace inlämning1Tomasso.Data.Repos
 
         public void DeleteUser(int userID)
         {
-            var user = _context.Users.SingleOrDefault(u => u.UserID == userID);
+            var user = _context.Users.FirstOrDefault(u => u.UserID == userID);
             if (user != null)
             {
                 _context.Users.Remove(user);
@@ -31,19 +31,19 @@ namespace inlämning1Tomasso.Data.Repos
             }
         }
 
-        public List<User> GetAllUsers(int userID) // Om du vill hämta en specifik användare, byt namn
-        {
-            return _context.Users.ToList();
-        }
-
         public void UpdateUser(User user)
         {
-            var existing = _context.Users.SingleOrDefault(u => u.UserID == user.UserID);
-            if (existing != null)
+            var existingUser = _context.Users.FirstOrDefault(u => u.UserID == user.UserID);
+            if (existingUser != null)
             {
-                _context.Entry(existing).CurrentValues.SetValues(user);
+                _context.Entry(existingUser).CurrentValues.SetValues(user);
                 _context.SaveChanges();
             }
+        }
+
+        public User GetUserById(int userId)
+        {
+            return _context.Users.SingleOrDefault(u => u.UserID == userId);
         }
     }
 }

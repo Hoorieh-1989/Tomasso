@@ -1,10 +1,16 @@
-﻿namespace inlämning1Tomasso.Data.DTOs
+﻿
+
+
+namespace Inlämning1Tomasso.Data.DTOs
 {
     public class DishDto
     {
         public int DishID { get; set; }
-        public string Name{ get; set; }
+        public string? Name { get; set; }
+        public decimal Price { get; set; }
+        public CategoryDto? Category { get; set; }
+        public List<IngredientDto>? Ingredients { get; set; }
 
-        public string Price { get; set; }
+
     }
 }

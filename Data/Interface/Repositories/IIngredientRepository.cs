@@ -1,17 +1,13 @@
-﻿using inlämning1Tomasso.Data.Models;
+﻿
 
-namespace inlämning1Tomasso.Data.Interface.Repositories
+namespace Inlämning1Tomasso.Data.Interface.Repositories
 {
     public interface IIngredientRepository
     {
-        /// CRUD operations for Ingridient entity
-        void AddIngredient(Ingredient ingredient);
-
-        void UpdateIngredient(Ingredient ingredient);
-
-        void DeleteIngredient(int ingredientID);    
-
    
-
+            //void AddIngredient(Ingredient ingredient);
+            //void DeleteIngredient(int ingredientID);
+            //void UpdateIngredient(Ingredient ingredient);
+            List<Ingredient> GetAllIngredients();
+        }
     }
-}

@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 
-
-namespace inlämning1Tomasso.Data.Models
+namespace Inlämning1Tomasso.Data.Models
 {
     public class Order
     {
@@ -16,8 +16,9 @@ namespace inlämning1Tomasso.Data.Models
 
         [Required]
         public int UserID { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; } //Nav prop till User
 
-        public List<Dish> Dishes{ get; set; }
+        public List<DishOrder>? DishOrders{ get; set; }
+
     }
 }

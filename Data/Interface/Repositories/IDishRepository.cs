@@ -1,18 +1,10 @@
-﻿using inlämning1Tomasso.Data.Models;
-using System.Collections.Generic;
+﻿using Inlämning1Tomasso.Data.DTOs;
 
-namespace inlämning1Tomasso.Data.Interface.Repositories
+namespace Inlämning1Tomasso.Data.Interface.Repositories
 {
     public interface IDishRepository
     {
-        void AddDish(Dish dish);
+        DishIngredientsDto GetDishIngredients(int dishId);
 
-        void UpdateDish(Dish dish);
-
-        void DeleteDish(int dishID);
-
-        List<Dish> GetAllDishes();         // Hämta alla rätter
-
-        Dish GetDishById(int dishID);      // Hämta en specifik rätt
     }
 }

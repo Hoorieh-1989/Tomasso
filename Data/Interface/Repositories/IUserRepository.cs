@@ -1,4 +1,6 @@
-﻿using inlämning1Tomasso.Data.Models;
+﻿
+
+using Inlämning1Tomasso.Data.Models;
 
 namespace inlämning1Tomasso.Data.Interface.Repositories
 {
@@ -6,11 +8,8 @@ namespace inlämning1Tomasso.Data.Interface.Repositories
     {
 
         void AddUser(User user);
-        void UpdateUser(User userID);
-
-        void DeleteUser(int userID);
-
-       List<User> GetAllUsers(int userID);
-
+        void UpdateUser(User user);
+        void DeleteUser(int userId);
+        User GetUserById(int userId);
     }
 }

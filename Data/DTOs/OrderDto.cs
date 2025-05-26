@@ -1,11 +1,10 @@
-﻿namespace inlämning1Tomasso.Data.DTOs
+﻿
+public class OrderDto
 {
-    public class OrderDto
-    {
-        public int OrderID { get; set; }
-        public int UserID { get; set; }
-        public List<int> DishIDs { get; set; } = new List<int>(); // dishes served
-        public DateTime OrderDate { get; set; } = DateTime.UtcNow;
-        public decimal TotalAmount { get; set; }
-    }
+    public int OrderID { get; set; }
+    public int UserID { get; set; }
+    public string? UserName { get; set; }
+    public DateTime OrderDate { get; set; }
+    public decimal Price { get; set; }
+    public List<OrderDishDto>? Dishes { get; set; }  // valfritt men bra
 }

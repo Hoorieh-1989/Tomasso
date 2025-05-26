@@ -1,20 +1,16 @@
-﻿using inlämning1Tomasso.Data.Models;
+﻿using Inlämning1Tomasso.Data.Models;
 
-namespace inlämning1Tomasso.Data.Repos
+namespace Inlämning1Tomasso.Data.Repos
 {
     public class DishOrderRepository
     {
-       public int DishID { get; set; }
-
         public int OrderID { get; set; }
+        public int DishID { get; set; }
 
-        //public int Quantity { get; set; }
+        //Navprop
 
-        //public decimal Price { get; set; }
+        public Order? Order { get; set; }
 
-        // Navigation property
-        public DishOrder DishOrder { get; set; }
-        public Dish Dish { get; set; }  
-
+        public Dish? Dish { get; set; }
     }
 }

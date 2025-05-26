@@ -1,30 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace inlämning1Tomasso.Data.Models
+namespace Inlämning1Tomasso.Data.Models
 {
     public class User
     {
         [Key]
         public int UserID { get; set; }
-
         [Required]
 
+        [StringLength(50)]
+        public string? UserName { get; set; }
+        [Required]
 
         [StringLength(50)]
-
-        public string UserName { get; set; }
-
-        [StringLength(50)]
-
-        public string Émail { get; set; }
+        public string? Email { get; set; }
+        [Required]
 
         [StringLength(50)]
-        public string Password { get; set; }
-
+        public string? Password { get; set; }
+        [StringLength(15)]
         [Phone]
-        public int phone { get; set; }
-
-       
+        public string? Phone { get; set; }
 
 
 

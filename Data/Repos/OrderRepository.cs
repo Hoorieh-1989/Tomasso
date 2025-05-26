@@ -1,13 +1,14 @@
 ﻿
-using inlämning1Tomasso.Data.Models;
-using inlämning1Tomasso.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
+using Inlämning1Tomasso.Data.Models;
 
-namespace Inlämning1Tomaso.Data.Repos
+using inlämning1Tomasso.Data.Interface.Repositories;
+using Inlämning1Tomasso.Data;
+using Microsoft.EntityFrameworkCore;
+
+
+namespace Inlämning1Tomasso.Data.Repository
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly TomassoDbContext _context;
 
@@ -16,44 +17,25 @@ namespace Inlämning1Tomaso.Data.Repos
             _context = context;
         }
 
-        // Skapa en ny beställning
         public void AddOrder(Order order)
         {
             _context.Orders.Add(order);
             _context.SaveChanges();
         }
 
-        // Ta bort en beställning
-        public void DeleteOrder(int orderID)
-        {
-            var order = _context.Orders
-                .Include(o => o.Dishes)  // Inkludera beställda rätter direkt (utan orderrader)
-                .FirstOrDefault(o => o.OrderID == orderID);
+        //public List<Order> GetAllOrders(int orderID)
+        //{
+        //    return _context.Orders
+        //                    .Include(o => o.OrderDishes)  // Inkludera OrderDishes för att få alla rätter för varje beställning
+        //                    .ToList();
+        //}
 
-            if (order != null)
-            {
-                // Ta bort själva beställningen
-                _context.Orders.Remove(order);
-                _context.SaveChanges();
-            }
-        }
-
-        // Hämta alla beställningar
-        public List<Order> GetAllOrders()
+        public List<Order> GetAllOrdersByUserId(int userId)
         {
             return _context.Orders
-                .Include(o => o.Dishes)  // Inkludera beställda rätter direkt
-                .ToList();
+       .Include(o => o.DishOrders)
+       .Where(o => o.UserID == userId)
+       .ToList();
         }
-
-        // Hämta en specifik beställning med detaljer (beställda rätter)
-        public Order GetOrderWithDishes(int orderID)
-        {
-            return _context.Orders
-                .Include(o => o.Dishes)  // Inkludera beställda rätter direkt
-                .FirstOrDefault(o => o.OrderID == orderID);
-        }
-
-
     }
 }

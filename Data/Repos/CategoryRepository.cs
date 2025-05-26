@@ -1,8 +1,8 @@
-﻿using inlämning1Tomasso.Data.Interface.Repositories;
-using inlämning1Tomasso.Data.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Inlämning1Tomasso.Data.Interface.Repositories;
+using Inlämning1Tomasso.Data.Models;
 
-namespace inlämning1Tomasso.Data.Repos
+
+namespace Inlämning1Tomasso.Data.Repos
 {
     public class CategoryRepository : ICategoryRepository
     {
@@ -13,40 +13,18 @@ namespace inlämning1Tomasso.Data.Repos
             _context = context;
         }
 
-        public void AddCategory(Category category)
-        {
-            _context.Category.Add(category);
-            _context.SaveChanges();
-        }
-
-        public void DeleteCategory(int categoryId)
-        {
-            var category = _context.Category.Find(categoryId);
-            if (category != null)
-            {
-                _context.Category.Remove(category);
-                _context.SaveChanges();
-            }
-        }
 
         public List<Category> GetAllCategories()
         {
-            return _context.Category.ToList();
+            return _context.Categories.ToList();
         }
 
-        public Category GetCategoryById(int categoryId)
+        public void CreateCategory(Category category)
         {
-            return _context.Category.FirstOrDefault(c => c.CategoryID == categoryId);
+            _context.Categories.Add(category);
+            _context.SaveChanges();
         }
 
-        public void UpdateCategory(Category category)
-        {
-            var existing = _context.Category.Find(category.CategoryID);
-            if (existing != null)
-            {
-                _context.Entry(existing).CurrentValues.SetValues(category);
-                _context.SaveChanges();
-            }
-        }
+
     }
 }

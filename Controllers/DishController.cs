@@ -1,11 +1,28 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Inlämning1Tomasso.Data.Interface.Services;
+
 using Microsoft.AspNetCore.Mvc;
 
-namespace inlämning1Tomasso.Controllers
+namespace Inlämning1Tomasso.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class DishController : ControllerBase
     {
+        private readonly IDishService _dishService;
+
+        public DishController(IDishService dishService)
+        {
+            _dishService = dishService;
+        }
+
+        [HttpGet("{id}/ingredients")]
+        public IActionResult GetDishIngredients(int id)
+        {
+            var dish = _dishService.GetDishIngredients(id);
+            if (dish == null)
+                return NotFound();
+
+            return Ok(dish);
+        }
     }
 }
