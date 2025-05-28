@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using inlämning1Tomasso.Data.DTOs;
+using System.ComponentModel.DataAnnotations;
 
 namespace Inlämning1Tomasso.Data.DTOs
 {
@@ -18,6 +19,8 @@ namespace Inlämning1Tomasso.Data.DTOs
         public int CategoryID { get; set; }
 
        
-        public List<IngredientDto> Ingredients { get; set; } = new();
+      
+        public List<IngredientCreateDto> Ingredients { get; set; } = new();
+
     }
 }
