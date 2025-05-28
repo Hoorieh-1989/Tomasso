@@ -10,6 +10,7 @@ namespace Inlämning1Tomasso.Data.DTOs
         public string? Description { get; set; }
         public decimal Price { get; set; }
 
+
         public List<IngredientDto>? Ingredients { get; set; }
 
 

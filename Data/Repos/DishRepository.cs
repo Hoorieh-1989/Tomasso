@@ -1,7 +1,8 @@
 ﻿using Inlämning1Tomasso.Data.DTOs;
 using Inlämning1Tomasso.Data.Interface.Repositories;
-using Inlämning1Tomasso.Data;
+using Inlämning1Tomasso.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Inlämning1Tomasso.Data.Repos
 {
@@ -34,6 +35,13 @@ namespace Inlämning1Tomasso.Data.Repos
                     Name = i.Name
                 }).ToList()
             };
+        }
+
+        public async Task<Dish> CreateDishAsync(Dish dish)
+        {
+            _context.Dishes.Add(dish);
+            await _context.SaveChangesAsync();
+            return dish;
         }
     }
 }

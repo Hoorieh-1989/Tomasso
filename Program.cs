@@ -127,14 +127,13 @@ var app = builder.Build();
 // --------------------------------------------
 // Middleware pipeline
 // --------------------------------------------
-if (app.Environment.IsDevelopment())
+// Middleware pipeline
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tomasos Pizzeria API");
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tomassos Pizzeria API");
+    c.RoutePrefix = "swagger";
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -142,3 +141,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

@@ -24,9 +24,10 @@ namespace Inlämning1Tomasso.Data.Models
         public int CategoryID { get; set; }      // FK till Category
         [Required]
         public Category? Category { get; set; }   // Navigeringsproperty
-        public List<Ingredient>? Ingredients { get; set; }
+      
 
         public List<DishOrder>? DishOrders { get; set; } //Maträtt som förekommer i flera beställningar
+        public List<Ingredient> Ingredients { get; set; } = new();
 
 
 

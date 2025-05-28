@@ -18,10 +18,11 @@ namespace Inlämning1Tomasso.Data.Services
             return _categoryRepository.GetAllCategories()
                 .Select(c => new CategoryDto
                 {
-                    //CategoryID = c.CategoryID,
+                    CategoryID = c.CategoryID,          // <- Avkommentera detta!
                     CategoryName = c.CategoryName
                 }).ToList();
         }
+
 
         public CategoryDto CreateCategory(CategoryDto categoryDto)
         {

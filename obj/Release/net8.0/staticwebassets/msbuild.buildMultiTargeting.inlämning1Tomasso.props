@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\inlämning1Tomasso.props" />
+</Project>
